@@ -101,7 +101,7 @@
   </head>
   <body>
     <canvas id="pinkboard" width="1204" height="700"></canvas>
-    <div id="name">裴怡静</div> 
+    <div id="name">再点一下</div>
     <canvas id="canvas" width="1204" height="700"></canvas>
 
     <script type="text/javascript">
@@ -515,6 +515,18 @@
 
    
     </script>
-  
 
-</body></html>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 点击页面任意地方触发
+            function showName() {
+                const nameDiv = document.getElementById("name");
+                nameDiv.textContent = "❤️裴怡静";
+                // 点击一次后就移除事件，防止再次触发
+                document.removeEventListener("click", showName);
+            }
+
+            document.addEventListener("click", showName);
+        });
+    </script>
+  </body></html>
